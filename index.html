@@ -491,7 +491,186 @@
       font-weight: 600;
     }
 
+    /* ── Setup & Use section ──────────────────────────────────────────── */
+    .setup-use {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 64px 24px;
+    }
+
+    .setup-use-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+
+    .setup-col {
+      padding: 0 40px 0 0;
+    }
+
+    .use-col {
+      padding: 0 0 0 40px;
+      border-left: 1px solid var(--border);
+    }
+
+    .col-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      color: var(--joule-purple);
+      margin-bottom: 10px;
+    }
+
+    .col-label svg {
+      width: 14px; height: 14px;
+      fill: none;
+      stroke: var(--joule-purple);
+      stroke-width: 2;
+    }
+
+    .col-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--joule-deep);
+      margin-bottom: 24px;
+      line-height: 1.3;
+    }
+
+    /* Numbered setup steps */
+    .setup-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .setup-step {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .setup-step-num {
+      min-width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--joule-purple), var(--joule-violet));
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+      box-shadow: 0 2px 8px rgba(123,79,191,0.30);
+    }
+
+    .setup-step-body h4 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+
+    .setup-step-body p {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.55;
+    }
+
+    .setup-step-body code {
+      display: inline-block;
+      background: var(--off-white);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1px 7px;
+      font-family: "Courier New", Courier, monospace;
+      font-size: 12px;
+      color: var(--joule-violet);
+    }
+
+    /* Code snippet blocks */
+    .snippet-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .snippet-card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+    }
+
+    .snippet-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--joule-deep);
+      padding: 9px 14px;
+    }
+
+    .snippet-lang {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--joule-glow);
+    }
+
+    .snippet-dots {
+      display: flex;
+      gap: 5px;
+    }
+
+    .snippet-dots span {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.20);
+    }
+
+    .snippet-code {
+      background: #1E1433;
+      padding: 16px 18px;
+      font-family: "Courier New", Courier, monospace;
+      font-size: 12.5px;
+      line-height: 1.65;
+      color: #C9B8F0;
+      overflow-x: auto;
+      white-space: pre;
+    }
+
+    .snippet-code .kw  { color: #A78BFA; }
+    .snippet-code .str { color: #86EFAC; }
+    .snippet-code .cm  { color: #6B7280; font-style: italic; }
+    .snippet-code .fn  { color: #7DD3FC; }
+    .snippet-code .val { color: #FCA5A5; }
+
+    .snippet-desc {
+      background: var(--card-bg);
+      border-top: 1px solid var(--border);
+      padding: 11px 16px;
+      font-size: 12.5px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
     /* ── Responsive ───────────────────────────────────────────────────── */
+    @media (max-width: 720px) {
+      .setup-use-inner {
+        grid-template-columns: 1fr;
+      }
+      .setup-col { padding: 0 0 40px 0; }
+      .use-col   { padding: 40px 0 0 0; border-left: none; border-top: 1px solid var(--border); }
+    }
+
     @media (max-width: 600px) {
       .stats-inner { gap: 28px; }
       .download-card { padding: 36px 24px; }
@@ -546,11 +725,116 @@
     </div>
   </header>
 
+  <!-- ── Setup & Use ──────────────────────────────────────────────────── -->
+  <section class="setup-use">
+    <div class="setup-use-inner">
+
+      <!-- LEFT: How to Setup -->
+      <div class="setup-col">
+        <div class="col-label">
+          <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          Installation
+        </div>
+        <p class="col-title">How to Setup</p>
+
+        <div class="setup-steps">
+
+          <div class="setup-step">
+            <div class="setup-step-num">1</div>
+            <div class="setup-step-body">
+              <h4>Download the skill file</h4>
+              <p>Click one of the download buttons above. The file is a <code>.md</code> skill, and there are no other dependencies.</p>
+            </div>
+          </div>
+
+          <div class="setup-step">
+            <div class="setup-step-num">2</div>
+            <div class="setup-step-body">
+              <h4>Access the Joule Extensions</h4>
+              <p>In your Joule Desktop app, open the Extensions area</p>
+            </div>
+          </div>
+
+          <div class="setup-step">
+            <div class="setup-step-num">3</div>
+            <div class="setup-step-body">
+              <h4>Import the skill file</h4>
+              <p>Click on New -> Add Skill -> Upload</p>
+            </div>
+          </div>
+
+          <div class="setup-step">
+            <div class="setup-step-num">4</div>
+            <div class="setup-step-body">
+              <h4>Select the skill file</h4>
+              <p>In the file browser popup, select the downloaded file</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: How to Use -->
+      <div class="use-col">
+        <div class="col-label">
+          <svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          Usage
+        </div>
+        <p class="col-title">How to Use</p>
+
+        <div class="snippet-list">
+
+          <div class="snippet-card">
+            <div class="snippet-header">
+              <span class="snippet-lang">Invoker</span>
+              <div class="snippet-dots"><span></span><span></span><span></span></div>
+            </div>
+            <div class="snippet-code"><span class="cm"># This is the command to activate each of the skills</span>
+<span class="fn">context-adapter</span>
+<span class="fn">context-advisor</span></div>
+            <div class="snippet-desc">The skill activation can be done as a "wizard" or as a one-line command. Simply typing 'context-adapter' will activate the skill and prompt you on how to proceed.</div>
+          </div>
+
+          <div class="snippet-card">
+            <div class="snippet-header">
+              <span class="snippet-lang">One-Line Command - High/Low Context</span>
+              <div class="snippet-dots"><span></span><span></span><span></span></div>
+            </div>
+            <div class="snippet-code"><span class="cm"># Adapt message to a high-context culture</span>
+<span class="fn">context-adapter <span class="str">high</span> <span class="val">'Dear Customer, [...]'</span></span>
+
+<span class="cm"># Provides guidance for a call/meeting with a high-context country interlocutor</span>
+<span class="fn">context-advisor <span class="str">high</span> <span class="val">'Call regarding password reset [...]'</span></span>
+            </div>
+            <div class="snippet-desc">This command allows you to invoke the skill in a single line with no specific nationality</div>
+          </div>
+
+          <div class="snippet-card">
+            <div class="snippet-header">
+              <span class="snippet-lang">One-Line Command - Country Specific</span>
+              <div class="snippet-dots"><span></span><span></span><span></span></div>
+            </div>
+            <div class="snippet-code"><span class="cm"># Adapt message aimed to a specific country</span>
+<span class="fn">context-adapter <span class="str">Norway</span> <span class="val">'Hello Eddie, [...]'</span></span>
+
+<span class="cm"># Provides guidance for a call/meeting with an interlocutor from a certain country</span>
+<span class="fn">context-advisor <span class="str">Brazil</span> <span class="val">'Call regarding password reset [...]'</span></span>
+            </div>
+            <div class="snippet-desc">Including the interlocutor country allows the skill to utilize all available metrics to generate a tailored communication suggestion.</div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  
+
   <!-- ── Footer ────────────────────────────────────────────────────────── -->
   <footer>
     <span>Joule Context Adapter</span> &nbsp;·&nbsp;
     SAP S/4HANA Cloud Public Edition &nbsp;·&nbsp;
-    Built with Claude Code &nbsp;·&nbsp;
+    Built with assistance of Claude Code &nbsp;·&nbsp;
     Internal Use Only &nbsp;·&nbsp;
     © 2026 SAP SE
   </footer>
