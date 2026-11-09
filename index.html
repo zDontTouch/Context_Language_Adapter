@@ -35,7 +35,7 @@
     html { scroll-behavior: smooth; }
 
     body {
-      font-family: "72", "72full", Arial, Helvetica, sans-serif;
+      font-family: "72", "72full", sans-serif, Helvetica, arial;
       background: var(--off-white);
       color: var(--text-primary);
       line-height: 1.6;
@@ -512,12 +512,9 @@
 
       <!-- Joule orb -->
       <div class="joule-orb">
-        <svg viewBox="0 0 36 36">
-          <circle cx="18" cy="18" r="10" stroke-opacity="0.7"/>
-          <path d="M18 8 C22 12 26 14 26 18 C26 22 22 26 18 26 C14 26 10 22 10 18 C10 14 14 12 18 8Z" stroke-opacity="0.5"/>
-          <circle cx="18" cy="18" r="3" fill="rgba(255,255,255,0.9)" stroke="none"/>
-        </svg>
+        <img alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAiGSURBVGhD7ZdrjF5FGcd/z8yZOefdtkvpllCWppRSEAJCLJdYvKAUgQ9GsGBBTQjxkhiiRg2aaKLCh4YYvkgIBDSCUWMQCRCpBEkQCGCVEi6xIEiLKcXaltJtd9/LucyZ8cM57+7bk+622/bj/pLJzDvnMv9nnsucF+aYY4455jgKpDkxG7515ePxtv/ssNWvxVU3MvDrwClYvLg/BSPV/PCFC7N1687J+9Oz5YgMuPqjmy6aeHf4Nl+Yj4eAhUAUCbEVEivEcSCOBRsLiYE4FpI41Nfq61ZIYiFOJItj/7zT6gfX3Hryy821DsWsDfjc6hc+2RlvPenHFsYhiwDQIsQxWEslykKSQFwbkwzMxzGVIUl9Xwxaa3pZ1C3n5Wuuv3XJ35trzoRqTszEtZc/sag9Hv1Wgo1V4gEQgciCMZVga8BawZp6bKqxGZg3/ftM9VwUNFbUkOnGf9hw27bjm+vOxKwM2Ldj/r2htMsERZQICESRYCPB1CKrPtTjKZFT18GaMDlvI9AoIiVEqGX5+Lw7m+vOxGEbcMWqZ28scnOtEo2IoAzYeFAUmKgWG03N98X3r1sjk/dZIxhdiTcKIgXamS8/csvu65rrT8dhGXDVJU8v77X1HSIRIoKIQkRh5oGN1NQu28qQqSaYaCpcbB1q1giLTtEMDYNBYQSM8lgVMCqge9E9G27fe0pTx8E4pAEPfiHovbv5NcEMD4pXoohaeioUjGCjAfEDwie9UM8tPi1i9ddHOOvqBVgEowNG9XuIUAv9WLgvhHBIfYe84a7Xn/xRmZtLKtERQmWAiEIZTRRPiewna7NNGVHlxuiHYxBYuDQhmVeFj9GBSIHRYFTAlPrSP/1013ebeprMaMDlqzacn6fmx9XOD+y+UggaEU1k9VSMNwQPhlLlHeG4E4Wlq+YhCCoSTvpUUgmWevdVwGghUhDl8frH1+88t6lrkBkN6LTN3YIxWhQiGmHKCBFBicIbO7DbYbIiWTOV1JEJWBM44bSI828YIbJSHUEiHH9ei5OujDEJGAlY6RsBViSWnvllU9cg0x5kX1qzYcWWra2tkY4x2hLpBK0MWlsiHRNpWzWlGE3aJDaQxP3Dqz6wYqE1BGdekjB6dsLIqTEizSUDAaFsl+x7K2fPqzkT73kKLzgv5D6gRseWr/nmim2NB2EmD+zLxk8oXErueuQupShTnM8ofV63Au9LygCu1OhS0KVClxCVYB1YJ5y8wnDOZ4dZvCI5iHgAQYBovmZkVcLoFQlel5Ta4VSBpyTkavJzqsm0Bgwt0W9nxZjL8jZpMUGat8mKLkXRpXBp1cqU0he0M03WhaIbcF2h7AhlVyg7sOuVgtd/P877m7sE74HQXIpAIN3v2P6PNm8+vp/9rmQ8c4ynjv15WkxIeKf5TB/dnOjzxhsP9UZHPr+ydHKeiEapqnSKUlSHWZ3MohCJGPIFSgRRghJQiqoPQnt7yZ6XC8bfTjn+TEvUmlo2hMD2TR1ee3CMnW8WTOwNpBmkWSDNhELK311/y/IHDhA3wLQeAFi6TH0HVfzb+4LSu4FW4L2jLB3eO7IQSEshc4HcBXIHeUHVT44DY1s9m+/Zh0ur7yiA7ZvabH6sTXu/0GlDu1O3LnQyt1mG028fIKrBtB4AePvdh9OVS69+JsvkBoW2oqpqpESjVO0F0YhS6CCYANLf+b4nBJRUY60E3wM7LAwvj3C554X799GbgF4GaR7IMkgzyAo/znDxma/9bOWOpq5BZvQAwMY3b9i8YDj/Shlc8N7R94YPDh/KSW/0UNXu1ztfDHpg0hOBwsH2f/bwPrBzS8b+PYF2L9DpBtpdaPdgoleGwna/etMdK95q6mkyowf6vPfBI28sO3HtAleoi6XecUWdE/VnhagI4/zUjiuqs6LvkXqMwJ5xzzuvpLz1XJd2W5FlQi+DLK1iX2yx/vu/WXlXU8fBOKQH+qy6dN8Ptcmf9qGK+zIMesHhQkkahMJBUedB1dc5UedCt4SJLuzYUjK2R+h2A+1uoN2p+tS7J1a4Tbc015+OgxXmaVlz4cMje3fKi0oNrbC6hYlijG4R6RhjWiQuYn7paVmhFUOr/ovZsjAUQ8tCYaHrq1BztZGFCxSF4Ci2zj9FXXTrr5btba49HYftAYCnNq39YPg4dx3epWVweF/ifeUF7wsKfeBu5w6cq+I+d5A5YTytYr3TreK+04VOV+ikriOtdO1sxHO4OTDItt1/3HHGsnU78kxdNZkP/W8lpZBMITTyoB57YH/uqzqfT9X6LPNBt/Ibf/6XM55qrncoZm0AwLbdD7y6fMm6xWWpL1KiJ5NZRIHXiJMDy6iq/vh3fWAihTStS2Um9NKAj9M7f/H86bc31zkcZhVCg5x/anSz0tlGN1lS65CKysmQObAF9tVh050Mn0Dus2dWn7v/5ub7D5dZJXGTyy5+dLSza/4mJUOjNkqIdILRCTJmGDJTCdyy1Vfq+11f5UWdH57i3UUnFRfc//wZ7zfffbgclQEAl1/wxMXtseRpo1s2qisT4y1ir0jqStSydf3vQFEEnAvkpc+GFuWffnTz6Rub75wNRxxCfZ586cq/JfPd9/qnc+lLvHVkA99AuYO97UCnU1Wdbs9jhro3Ha14joUBAH997bK7bdL7bVVSHZiSouwfYpUBY+OBXhpwzmOHsnv/vOWs+5rvORKOiQFAWLm8+w3R+SbvHUEKgvaTydzpVZ4IBLTNXzxrdM8h/6wfLkedA4OsXf3UKWNj815SMm8xvSFC2xIbIYRAWgQkcv8bWVJc+NBrH/pv89kj5Vh5AICHN67ZNjS/+KIPWU9sgQ9VCGUOENeZd1x33bEUz7H2QJ9rPvbc2Z3Ogp/ku+Z/Aq+Cjspnk+H2+sf+9ZHXm/fOMcccc8wxx9Hwfxc5DPqLgX8rAAAAAElFTkSuQmCC" />
       </div>
+      
 
       <h1>Joule <span>Context Adapter</span></h1>
       <p class="hero-sub">
