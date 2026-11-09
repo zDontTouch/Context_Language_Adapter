@@ -4,10 +4,9 @@ description: >-
   Adapts a user's text to match the communication style expected by a target customer's cultural background — either high-context (descriptive, relational, rich in examples and analogies) or low-context (direct, concise, factual). Activate when the user includes "context-adapter" in their message followed by the text to adapt. The skill asks for the target customer's nationality or a direct High-Context / Low-Context preference, then rewrites the content accordingly. Trigger phrases include: "context-adapter", "context adapter", "/context-adapter".
 metadata:
   author: Leonardo Felini
-  version: 2.3.0
+  version: 2.3.1
   tags: communication culture customer localization high-context low-context
 ---
-
 
 # Context Language Adapter
 
@@ -69,11 +68,11 @@ Measures how societies handle inequality and hierarchy. High PDI scores indicate
 
 Measures how integrated individuals are into groups. High individualism means people primarily care for themselves and their immediate family; low individualism (collectivism) reflects strong group loyalty and interdependence.
 
-- **IDV > 60** (Individualist): Use “you” framing; highlight personal benefit and individual empowerment; direct appeal to the reader’s own interest
-- **IDV < 40** (Collectivist): Use “we” and “our team” framing; emphasise group benefit, shared harmony, and collective outcome
+- **IDV > 60** (Individualist): Use "you" framing; highlight personal benefit and individual empowerment; direct appeal to the reader's own interest
+- **IDV < 40** (Collectivist): Use "we" and "our team" framing; emphasise group benefit, shared harmony, and collective outcome
 - **IDV 40–60** (no rule triggered): Measures the degree to which individuals act independently vs. as part of a group
 
-### MAS — Masculinity vs Femininity: Society’s Emotional Roles
+### MAS — Masculinity vs Femininity: Society's Emotional Roles
 
 Distinguishes between assertive, competitive masculine cultures and modest, nurturing feminine cultures. High MAS societies value achievement and success; low MAS societies value care, quality of life, and consensus.
 
@@ -245,7 +244,7 @@ Store dimension values as **PDI, IDV, MAS, UAI, LTO, IVR**. Any value shown as *
 
 Also check whether the country belongs to one of the five Regional Cultural Clusters above. If it does, note the cluster's Key Insight and carry it into Step 3 as additional context.
 
-**If the user said “High-Context”, “High”, “Low-Context”, or “Low”** instead of a country name, use that directly. No dimension or cluster data will be available — apply base style only.
+**If the user said "High-Context", "High", "Low-Context", or "Low"** instead of a country name, use that directly. No dimension or cluster data will be available — apply base style only.
 
 → **Result: CONTEXT_LEVEL** + dimension values where available + cluster insight if applicable
 
@@ -260,11 +259,11 @@ Rewrite CONTENT_TO_ADAPT as a full, polished customer-facing response.
 ### High-Context Base Style
 
 - **Open** with a warm, relationship-building sentence that acknowledges the customer
-- **Build context before the main point** — explain the “why” before the “how”
+- **Build context before the main point** — explain the "why" before the "how"
 - **Use at least one analogy, metaphor, or real-world example** to illustrate the key concept
 - **Use flowing prose** over bullet lists — connect ideas with transitions
 - **Respect hierarchy and face** — frame issues as shared challenges, not individual failures
-- **Close** with an open, collaborative invitation (e.g., “Please do not hesitate to reach out should you have any further questions”)
+- **Close** with an open, collaborative invitation (e.g., "Please do not hesitate to reach out should you have any further questions")
 - **Tone**: warm, patient, contextual, personal
 - **Avoid**: cold or blunt phrasing, transactional language that ignores the relationship
 
@@ -283,8 +282,8 @@ Rewrite CONTENT_TO_ADAPT as a full, polished customer-facing response.
 
 - **PDI > 60**: Formal salutation; acknowledge seniority; avoid direct challenge or criticism
 - **PDI < 40**: Egalitarian tone; first names acceptable; non-hierarchical language
-- **IDV < 40**: “We” framing; group benefit and harmony over individual outcome
-- **IDV > 60**: “You” framing; personal benefit and individual empowerment
+- **IDV < 40**: "We" framing; group benefit and harmony over individual outcome
+- **IDV > 60**: "You" framing; personal benefit and individual empowerment
 - **MAS > 60**: Results-focused and assertive; lead with outcomes
 - **MAS < 40**: Collaborative; emphasise shared success and mutual care
 - **UAI > 70**: Step-by-step structure; eliminate all ambiguity; state every assumption explicitly
@@ -316,10 +315,12 @@ For each dimension, generate a 10-block visual scale using these rules:
 - Empty blocks: ⬜
 - Unknown (?): ⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜
 
+**Header line rule**: If the country belongs to a Regional Cultural Cluster, write `[Country] | Cluster: [cluster name]`. If there is no cluster match, write only `[Country]` — omit the "| Cluster:" part entirely.
+
 Header line, then one entry per dimension (scale bar on the same line as the metric, insight on the next line with a blank line between them), then the context score line:
 
 ```
-[Country] | Cluster: [cluster name, or "No regional cluster match"]
+[Country] | Cluster: [cluster name]
 
 **Power Distance: [PDI value]** [scale bar]
 
